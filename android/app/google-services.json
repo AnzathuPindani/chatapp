@@ -29,6 +29,13 @@
             {
               "client_id": "665395841372-0ruqr34l5o6opg6k3fv77pb3nnkkaqlk.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "665395841372-it9251v9i7r2h0dt8mqb1nomv12qvhu9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flatchatapp"
+              }
             }
           ]
         }

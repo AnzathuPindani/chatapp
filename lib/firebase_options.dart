@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -25,7 +28,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,15 +49,6 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyApBjfgxPtJj2CcUSmlJwmdWU8qEmMTPig',
-    appId: '1:665395841372:web:3c04a8596c869443fd9999',
-    messagingSenderId: '665395841372',
-    projectId: 'flutter-chat-app-a256c',
-    authDomain: 'flutter-chat-app-a256c.firebaseapp.com',
-    storageBucket: 'flutter-chat-app-a256c.appspot.com',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyABY8BtcjnbyLo9yL2qT6YIuGGnUG_ksPg',
     appId: '1:665395841372:android:d08252781a8fdfb2fd9999',
@@ -61,16 +58,6 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCcpMrllyE_LcKsxWJ1Hr61UwHAYVPRX1I',
-    appId: '1:665395841372:ios:c980efb1816e6ab4fd9999',
-    messagingSenderId: '665395841372',
-    projectId: 'flutter-chat-app-a256c',
-    storageBucket: 'flutter-chat-app-a256c.appspot.com',
-    iosClientId: '665395841372-it9251v9i7r2h0dt8mqb1nomv12qvhu9.apps.googleusercontent.com',
-    iosBundleId: 'com.example.flatchatapp',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyCcpMrllyE_LcKsxWJ1Hr61UwHAYVPRX1I',
     appId: '1:665395841372:ios:c980efb1816e6ab4fd9999',
     messagingSenderId: '665395841372',
